@@ -1,0 +1,19 @@
+---Start MySQL from commandline
+start_mysql
+
+---Start session
+mysql --host=127.0.0.1 --port=3306 --user=root --password=MTEyNTctYWtzaGF0
+
+---get sql code
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0110EN-SkillsNetwork/datasets/sakila/sakila_mysql_dump.sql
+
+---run sql code
+source sakila_mysql_dump.sql;
+
+---create db on MySQL
+create database sakila;
+
+---Additional
+SHOW FULL TABLES WHERE table_type = 'BASE TABLE';
+mysqldump --host=127.0.0.1 --port=3306 --user=root --password sakila staff > sakila_staff_mysql_dump.sql
+cat sakila_staff_mysql_dump.sql
